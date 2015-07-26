@@ -21,7 +21,7 @@ public class FirstPersonController : MonoBehaviour {
 	
 	
 	void Awake() {
-		Screen.lockCursor = true;
+		Cursor.lockState = true;
 		cameraTransform = Camera.main.transform;
 		rigidbody = GetComponent<Rigidbody> ();
 	}
