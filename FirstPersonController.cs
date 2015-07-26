@@ -21,7 +21,8 @@ public class FirstPersonController : MonoBehaviour {
 	
 	
 	void Awake() {
-		Cursor.lockState = true;
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 		cameraTransform = Camera.main.transform;
 		rigidbody = GetComponent<Rigidbody> ();
 	}
