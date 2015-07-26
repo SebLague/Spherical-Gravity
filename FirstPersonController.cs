@@ -5,8 +5,8 @@ using System.Collections;
 public class FirstPersonController : MonoBehaviour {
 	
 	// public vars
-	public float mouseSensitivityX = 250;
-	public float mouseSensitivityY = 250;
+	public float mouseSensitivityX = 1;
+	public float mouseSensitivityY = 1;
 	public float walkSpeed = 6;
 	public float jumpForce = 220;
 	public LayerMask groundedMask;
@@ -29,8 +29,8 @@ public class FirstPersonController : MonoBehaviour {
 	void Update() {
 		
 		// Look rotation:
-		transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mouseSensitivityX * Time.deltaTime);
-		verticalLookRotation += Input.GetAxis("Mouse Y") * mouseSensitivityY * Time.deltaTime;
+		transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mouseSensitivityX);
+		verticalLookRotation += Input.GetAxis("Mouse Y") * mouseSensitivityY;
 		verticalLookRotation = Mathf.Clamp(verticalLookRotation,-60,60);
 		cameraTransform.localEulerAngles = Vector3.left * verticalLookRotation;
 		
